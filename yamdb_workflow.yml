@@ -56,7 +56,7 @@ jobs:
         with:
           push: true
           context: ./api_yamdb/
-          tags: sergpol/api_yamdb:latest
+          tags: sergpol/test_request:latest
 #  deploy:
 #    runs-on: ubuntu-latest
 #    needs: build_and_push_to_docker_hub
