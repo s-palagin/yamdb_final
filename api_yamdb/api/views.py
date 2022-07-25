@@ -3,20 +3,15 @@ from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, viewsets
 from rest_framework.pagination import PageNumberPagination
+from reviews.models import Category, Genre, Review, Title
 
-from reviews.models import (
-    Category, Genre, Title, Review
-)
 from .filters import TitlesFilter
 from .mixins import CreateListDestroyViewSet
-from .permissions import (
-    IsAdminOrReadOnly, IsAuthorOrModeratorOrAdminOrReadOnly
-)
-
-from .serializers import (
-    CategorySerializer, CommentSerializer, GenreSerializer,
-    ReviewSerializer, TitleReadOnlySerializer, TitleSerializer
-)
+from .permissions import (IsAdminOrReadOnly,
+                          IsAuthorOrModeratorOrAdminOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          TitleReadOnlySerializer, TitleSerializer)
 
 
 class CommentViewSet(viewsets.ModelViewSet):

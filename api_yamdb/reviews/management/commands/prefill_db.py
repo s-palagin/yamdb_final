@@ -3,7 +3,6 @@ import os
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
-
 from reviews import models
 from users.serializers import generate_confirmation_code
 
