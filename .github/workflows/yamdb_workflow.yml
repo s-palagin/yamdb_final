@@ -65,6 +65,8 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
+            sudo docker image rm sergpol/api_yamdb:latest
+            sudo docker image pull sergpol/api_yamdb:latest
             rm -f .env
             touch .env
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
