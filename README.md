@@ -19,7 +19,7 @@
   ### Как запустить проект:
 
 <font size = 3>Клонировать репозиторий:  ```git clone https://github.com/s-palagin/yamdb_final.git```
-Перейти в папкуcd yamdb_final/infra:
+Перейти в папку yamdb_final/infra:
 ```
 cd yamdb_final/infra
 ```
@@ -45,15 +45,15 @@ docker-compose up -d --build
 ```
 Выполнить миграции: 
 ```
-docker-compose exec web python manage.py migrate
+docker exec web python manage.py migrate
 ```
 Запустите команду управления коллекцией статических файлов:
 ```
-docker-compose exec web python manage.py collectstatic --noinput
+docker exec web python manage.py collectstatic --noinput
 ```
 Для создания суперпользователя используйте команду:
 ```
-docker-compose exec web python manage.py createsuperuser
+docker exec web python manage.py createsuperuser
 ```
 
   ### Описание REST API:
