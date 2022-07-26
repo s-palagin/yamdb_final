@@ -19,40 +19,49 @@
   ### Как запустить проект:
 
 <font size = 3>Клонировать репозиторий:  ```git clone https://github.com/s-palagin/yamdb_final.git```
-Перейти в папкуcd yamdb_final/infra:```cd yamdb_final/infra```
+Перейти в папкуcd yamdb_final/infra:
+```
+cd yamdb_final/infra
+```
 
 <font size = 3>В текущей папке создать файл .env по следующему шаблону:
 ```
 # Django SECRET_KEY
 SECRET_KEY=p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs
-
 # имя базы данных
 DB_NAME=postgres
-
 # логин для подключения к базе данных
 POSTGRES_USER=postgres
 # пароль для подключения к БД
 POSTGRES_PASSWORD=postgres
-
 # название сервиса (контейнера)
 DB_HOST=db
-
 # порт для подключения к БД
 DB_PORT=5432
 ```
 <font size = 3>Выполнить сборку контейнеров:
-```docker-compose up -d --build```
+```
+docker-compose up -d --build
+```
 Выполнить миграции: 
-```docker-compose exec web python manage.py migrate```
+```
+docker-compose exec web python manage.py migrate
+```
 Запустите команду управления коллекцией статических файлов:
-```docker-compose exec web python manage.py collectstatic --noinput```
+```
+docker-compose exec web python manage.py collectstatic --noinput
+```
 Для создания суперпользователя используйте команду:
-```docker-compose exec web python manage.py createsuperuser```
+```
+docker-compose exec web python manage.py createsuperuser
+```
 
   ### Описание REST API:
 
 <font size = 3> Пример запроса получения списка произведений:
-```http://localhost/api/v1/titles/```
+```
+http://localhost/api/v1/titles/
+```
 Ответ сервера:
 ``` 
 [
@@ -86,12 +95,27 @@ DB_PORT=5432
 ```
 http://localhost//api/v1/titles/{title_id}/reviews/
 ```
-
+Ответ сервера:
+```
+[
+  {
+    "count": 0,
+    "next": "string",
+    "previous": "string",
+    "results": [
+      {
+        "id": 0,
+        "text": "string",
+        "author": "string",
+        "score": 1,
+        "pub_date": "2019-08-24T14:15:22Z"
+      }
+    ]
+  }
+]
+```
 
 Для получения подробного описания REST API, предоставляемого сервисом, необходимо перейти на
 
   
-
-  
-
 http://localhost/redoc/
