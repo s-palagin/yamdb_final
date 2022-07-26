@@ -11,6 +11,7 @@ services:
 
   web:
     image: sergpol/api_yamdb:latest
+    container_name: web
     restart: always
     volumes:
       - static_value:/app/static/
