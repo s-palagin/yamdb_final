@@ -9,7 +9,7 @@ api_patterns = [
 
 urlpatterns = [
     path(
-        '/',
+        '',
         TemplateView.as_view(template_name='redoc.html'),
         name='redoc'
     ),
